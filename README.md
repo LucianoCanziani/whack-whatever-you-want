@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/96893895/170833743-03c6c016-78fc-4155-
 
 ## GitHub 
 
-Repository Link: [https://github.com/LucianoCanziani/Drum-Kit-Simulator.git](https://github.com/LucianoCanziani/whack-whatever-you-want)
+Repository Link: https://github.com/LucianoCanziani/whack-whatever-you-want
 
 ## Deploy Netlify
 
