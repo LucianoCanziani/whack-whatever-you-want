@@ -10,7 +10,7 @@ This project is part of the "30 Day Vanilla JS Coding Challenge" and I gave it m
 
 Challenge link: https://javascript30.com/
 
-## Preview
+## Video Preview
 
 https://user-images.githubusercontent.com/96893895/170833743-03c6c016-78fc-4155-b168-2d5188000190.mp4
 
