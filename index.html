@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="mole, whack, whack the mole, whack whatever you want, hit, punch, game" name="keywords">
+  <meta content="Inspired in the whack the mole. I present you whack whatever you want. In this game you will be able to upload any photo and replace it with the mole." name="description">
+  <meta name="copyright" content="Luciano Canziani" />
+  <meta name="author" content="Luciano Canziani" />
+  <title>Whack A Mole!</title>
+  <link rel="icon" href="./img/mole.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Koulen&family=Open+Sans:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/6ee8edf255.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <h1 class="tittle">Golpea-lo-que-tu-quieras</h1>
+      <div class="game-hidden" id="navItems">
+        <button class="btn change-photo" onClick="changePhoto()">Cambiar Foto</button>
+        <div class="score">0</div>
+        <a id="start" class="btn start">Empezar!</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="image-hide">
+      <div class="drag-area show">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <h3>Arrastra y Suelta la Foto que Quieras Golpear</h3>
+        <span>O</span>
+        <button>Buscar Foto</button>
+        <input type="file" hidden>
+      </div>
+      <div class="go-game-container show-on-load" hidden>
+        <button class="btn go-game" onClick="displayGame()">Ir al Juego</button>
+      </div>
+    </div>
+    <div class="game game-hide">
+      <div class="holes">
+        <div class="hole hole1">
+          <img class="mole">
+        </div>
+        <div class="hole hole2">
+          <img class="mole">
+        </div>
+        <div class="hole hole3">
+          <img class="mole">
+        </div>
+        <div class="hole hole4">
+          <img class="mole">
+        </div>
+        <div class="hole hole5">
+          <img class="mole">
+        </div>
+        <div class="hole hole6">
+          <img class="mole">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
