@@ -300,17 +300,6 @@ h1 {
   .holes {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 200px 200px 200px;
-  }
-}
-
-@media (max-width: 600px) {
-  .drag-area {
-    margin-top: 20%;
-  }
-  .holes {
-    display: grid;
-    grid-template-columns: 50% 50%;
     grid-template-rows: 150px 150px 150px;
   }
   .hole:after {
@@ -336,5 +325,12 @@ h1 {
     height: 150px;
     transition: all 0.4s;
   }
+}
+
+@media (max-width: 600px) {
+  .drag-area {
+    margin-top: 20%;
+  }
+  
 }
 
