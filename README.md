@@ -12,7 +12,7 @@ Challenge link: https://javascript30.com/
 
 ## Video Preview
 
-https://user-images.githubusercontent.com/96893895/170833743-03c6c016-78fc-4155-b168-2d5188000190.mp4
+https://user-images.githubusercontent.com/96893895/170843341-a5e49d99-2a72-4586-96cc-9ec1d162840a.mp4
 
 ## GitHub 
 
