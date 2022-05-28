@@ -302,6 +302,7 @@ h1 {
     grid-template-columns: 50% 50%;
     grid-template-rows: 150px 150px 150px;
   }
+
   .hole:after {
     display: block;
     background: url(./img/dirt.svg) bottom center no-repeat;
@@ -313,7 +314,7 @@ h1 {
     z-index: 2;
     bottom: -30px;
   }
-  
+
   .mole {
     background-image: url('');
     background: bottom no-repeat;
@@ -331,6 +332,47 @@ h1 {
   .drag-area {
     margin-top: 20%;
   }
-  
+
+  .container {
+    margin: 0px;
+  }
 }
 
+@media (max-width: 350px) {
+  .drag-area {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-height: 650px) {
+  .holes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 125px 125px 125px;
+  }
+
+  .hole:after {
+    display: block;
+    background: url(./img/dirt.svg) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+  }
+
+  .mole {
+    background-image: url('');
+    background: bottom no-repeat;
+    background-size: 100%;
+    position: absolute;
+    border: none;
+    top: 100%;
+    width: 150px;
+    height: 150px;
+    transition: all 0.4s;
+  }
+}
