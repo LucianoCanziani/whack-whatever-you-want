@@ -1,4 +1,6 @@
-# whack-whatever-you-want
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b6517030-8405-4448-bf2e-7ca2eac212ff/deploy-status)](https://app.netlify.com/sites/whackwhateveryouwant/deploys)
 
 # Whack Whatever you Want
 
@@ -14,4 +16,4 @@ Repository Link: [https://github.com/LucianoCanziani/Drum-Kit-Simulator.git](htt
 
 ## Deploy Netlify
 
-Deploy Link: 
+Deploy Link: https://main--whackwhateveryouwant.netlify.app/
