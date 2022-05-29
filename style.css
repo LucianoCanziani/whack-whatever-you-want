@@ -345,7 +345,7 @@ h1 {
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 585px) {
   .holes {
     display: grid;
     grid-template-columns: 50% 50%;
