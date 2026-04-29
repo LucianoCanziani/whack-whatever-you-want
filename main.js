@@ -112,7 +112,7 @@ const displayGame = () => {
   navItems.classList.add("nav-items");
   for (let i = 0; i < gameDisplay.length; i++) {
     const el = gameDisplay[i];
-    el.setAttribute("style", "display:block");
+    el.classList.add("show");
     el.classList.remove("fade-in");
     void el.offsetWidth;
     el.classList.add("fade-in");
@@ -128,7 +128,7 @@ const changePhoto = () => {
   navItems.classList.remove("nav-items");
   navItems.classList.add("game-hidden");
   for (let i = 0; i < gameDisplay.length; i++) {
-    gameDisplay[i].setAttribute("style", "display:none");
+    gameDisplay[i].classList.remove("show");
   }
 };
 
