@@ -51,9 +51,9 @@ h1 {
 
 .nav {
   text-align: center;
-  width: 70%;
+  width: 80%;
   background: rgb(0, 0, 0);
-  padding: 3rem 6rem;
+  padding: 2.5rem 4rem;
   border-radius: 1rem;
   position: absolute;
   bottom: 0;
@@ -67,6 +67,7 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .btn {
@@ -74,7 +75,7 @@ h1 {
   border: none;
   border-radius: 25px;
   font-size: 2.5rem;
-  padding: 2rem 3rem;
+  padding: 1.5rem 2.5rem;
   cursor: pointer;
 }
 
@@ -104,8 +105,9 @@ h1 {
 
 .score {
   color: #fff;
-  font-size: 8rem;
+  font-size: 6rem;
   text-align: center;
+  line-height: 1;
 }
 
 .show {
@@ -114,12 +116,16 @@ h1 {
 
 .container {
   margin-top: 7%;
+  padding: 0 16px;
 }
 
 .holes {
-  height: 400px;
+  height: 290px;
+  max-width: 720px;
   display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -129,6 +135,9 @@ h1 {
   justify-content: center;
   overflow: hidden;
   position: relative;
+  background: radial-gradient(ellipse at 50% 20%, #3d2010 0%, #150d08 55%, #0a0603 100%);
+  border-radius: 50% 50% 40% 40% / 35% 35% 65% 65%;
+  box-shadow: inset 0 15px 35px rgba(0,0,0,0.95), inset 0 5px 12px rgba(0,0,0,0.8);
 }
 
 .hole:after {
@@ -136,7 +145,7 @@ h1 {
   background: url(./img/dirt.svg) bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 200px;
+  width: 140px;
   height: 70px;
   position: absolute;
   z-index: 2;
@@ -149,8 +158,8 @@ h1 {
   position: absolute;
   border: none;
   top: 100%;
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   transition: all 0.4s;
 }
 
@@ -296,16 +305,16 @@ h1 {
   .holes {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 150px 150px;
+    grid-template-rows: 110px 110px 110px;
   }
 
   .hole:after {
-    width: 150px;
+    width: 110px;
   }
 
   .mole {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
   }
 }
 
@@ -330,15 +339,181 @@ h1 {
   .holes {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 125px 125px 125px;
+    grid-template-rows: 110px 110px 110px;
   }
 
   .hole:after {
-    width: 150px;
+    width: 110px;
   }
 
   .mole {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* ─── Game Stats (score + timer + combo) ─── */
+
+.game-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.game-meta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#timer {
+  color: #ffc600;
+  font-family: 'Koulen';
+  font-size: 4.5rem;
+  min-width: 3.5rem;
+  text-align: center;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+#timer.urgent {
+  color: #ff3b30;
+  animation: pulse 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to   { transform: scale(1.25); }
+}
+
+#combo {
+  font-family: 'Koulen';
+  font-size: 2.4rem;
+  color: #ffc600;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#combo.active {
+  opacity: 1;
+  animation: combo-pop 0.2s ease forwards;
+}
+
+@keyframes combo-pop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1.0); opacity: 1; }
+}
+
+/* ─── Particles ─── */
+
+.particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+  z-index: 999;
+  animation: particle-fly 0.6s ease-out forwards;
+}
+
+.gold-particle {
+  background: #ffc600;
+  width: 11px;
+  height: 11px;
+}
+
+@keyframes particle-fly {
+  to {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}
+
+/* ─── Floating text ─── */
+
+.float-text {
+  position: fixed;
+  font-family: 'Koulen';
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  pointer-events: none;
+  z-index: 999;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  animation: float-up 0.75s ease-out forwards;
+}
+
+@keyframes float-up {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(-65px); }
+}
+
+/* ─── Gold Mode ─── */
+
+.hole.gold .mole {
+  filter: brightness(1.4) sepia(0.5) saturate(3.5) hue-rotate(-10deg);
+  animation: gold-pulse 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes gold-pulse {
+  from { filter: brightness(1.4) sepia(0.5) saturate(3.5) hue-rotate(-10deg); }
+  to   { filter: brightness(1.9) sepia(0.7) saturate(5)   hue-rotate(-10deg); }
+}
+
+/* ─── Stun ─── */
+
+.hole.stunned .mole {
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  filter: brightness(0.65) saturate(0.4);
+}
+
+/* ─── Screen Shake ─── */
+
+@keyframes screen-shake {
+  0%   { transform: translate(0, 0)      rotate(0deg); }
+  20%  { transform: translate(-4px, 2px) rotate(-0.5deg); }
+  40%  { transform: translate(4px, -2px) rotate(0.5deg); }
+  60%  { transform: translate(-3px, 3px) rotate(-0.3deg); }
+  80%  { transform: translate(3px, -1px) rotate(0.3deg); }
+  100% { transform: translate(0, 0)      rotate(0deg); }
+}
+
+body.shake {
+  animation: screen-shake 0.28s ease-in-out;
+}
+
+/* ─── Fade-in transition ─── */
+
+.fade-in {
+  animation: fade-in 0.4s ease forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Responsive: game-stats ─── */
+
+@media (max-width: 750px) {
+  .game-stats {
+    gap: 0.3rem;
+  }
+
+  .score {
+    font-size: 5rem;
+  }
+
+  #timer {
+    font-size: 3.5rem;
+  }
+
+  #combo {
+    font-size: 2rem;
   }
 }
